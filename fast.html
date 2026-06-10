@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Apex - Fast Training Speed</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap fast">
+    <header class="bar fast">
+      <h1>Project <span class="accent">Apex</span> &mdash; Fast Training Speed</h1>
+      <div class="sub">Fast-forwarded game speed &middot; three training stages</div>
+    </header>
+
+    <section class="grid">
+      <div class="tile">
+        <div class="cap"><span class="dot"></span>Early run<span class="stage">stage 1</span></div>
+        <div class="frame">
+          <video src="assets/fast-early.mp4" autoplay muted loop playsinline preload="auto"></video>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="cap"><span class="dot"></span>Mid run<span class="stage">stage 2</span></div>
+        <div class="frame">
+          <video src="assets/fast-mid.mp4" autoplay muted loop playsinline preload="auto"></video>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="cap"><span class="dot"></span>Final run<span class="stage">stage 3</span></div>
+        <div class="frame">
+          <video src="assets/fast-final.mp4" autoplay muted loop playsinline preload="auto"></video>
+        </div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="sync" id="restart-all" type="button">&#8635; Restart all</button>
+      <a class="nav" href="normal.html">&larr; Normal Speed</a>
+    </div>
+
+    <p class="hint"><a class="home" href="index.html">&larr; Home</a> &nbsp; Clips loop automatically. Use &ldquo;Restart all&rdquo; to re-sync them.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

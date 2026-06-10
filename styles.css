@@ -1,0 +1,181 @@
+/* Project Apex - training clip showcase
+   Dark theme, square tiles, mobile-friendly. */
+
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --border: #2b333d;
+  --ink: #e6edf3;
+  --muted: #9aa7b2;
+  --apex: #003b5f;       /* Project Apex blue */
+  --apex-light: #8ac6cb; /* HSEL light blue accent */
+  --fast: #f2b705;       /* gold accent for "fast speed" */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+header.bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+
+header.bar h1 {
+  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
+  margin: 0;
+  letter-spacing: .3px;
+}
+
+header.bar h1 .accent { color: var(--apex-light); }
+header.bar.fast h1 .accent { color: var(--fast); }
+
+header.bar .sub {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Three square tiles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.tile {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, .35);
+}
+
+.tile .cap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: .98rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tile .cap .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--apex-light);
+}
+.fast .tile .cap .dot { background: var(--fast); }
+
+.tile .cap .stage { color: var(--muted); font-weight: 500; margin-left: auto; font-size: .82rem; }
+
+.tile .frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* square window */
+  background: #000;
+}
+
+.tile video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fill the square (crops 16:9 edges) */
+  display: block;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 26px 0 0;
+}
+
+button.sync {
+  appearance: none;
+  border: 1px solid var(--apex-light);
+  background: var(--apex);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .06s ease, background .15s ease;
+}
+.fast button.sync { border-color: var(--fast); background: #6b5300; }
+button.sync:hover { background: #0a4f7a; }
+.fast button.sync:hover { background: #8a6c00; }
+button.sync:active { transform: translateY(1px); }
+
+a.nav, a.home {
+  color: var(--apex-light);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  padding: 11px 18px;
+  border-radius: 10px;
+  transition: border-color .15s ease, color .15s ease;
+}
+.fast a.nav { color: var(--fast); }
+a.nav:hover, a.home:hover { border-color: var(--apex-light); }
+.fast a.nav:hover { border-color: var(--fast); }
+
+.hint { color: var(--muted); font-size: .85rem; margin-top: 20px; }
+
+/* Landing page */
+.landing {
+  text-align: center;
+  padding-top: 8vh;
+}
+.landing h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin: 0 0 6px; }
+.landing h1 .accent { color: var(--apex-light); }
+.landing p.lead { color: var(--muted); font-size: 1.05rem; margin: 0 0 40px; }
+.landing .choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 320px));
+  gap: 24px;
+  justify-content: center;
+}
+.landing .choice {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 34px 26px;
+  transition: transform .08s ease, border-color .15s ease;
+}
+.landing .choice:hover { transform: translateY(-3px); border-color: var(--apex-light); }
+.landing .choice .big { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+.landing .choice.normal .big { color: var(--apex-light); }
+.landing .choice.fast .big { color: var(--fast); }
+.landing .choice .small { color: var(--muted); font-size: .92rem; }
+
+/* Mobile: stack into one column so the QR-scanned phone view works */
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+  .landing .choices { grid-template-columns: 1fr; }
+}
