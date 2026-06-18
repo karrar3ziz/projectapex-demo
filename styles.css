@@ -154,11 +154,19 @@ a.nav:hover, a.home:hover { border-color: var(--apex-light); }
 /* Landing page */
 .landing {
   text-align: center;
-  padding-top: 8vh;
+  padding-top: 4vh;
 }
 .landing h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin: 0 0 6px; }
 .landing h1 .accent { color: var(--apex-light); }
-.landing p.lead { color: var(--muted); font-size: 1.05rem; margin: 0 0 40px; }
+.landing p.lead { color: var(--muted); font-size: 1.05rem; margin: 0 0 18px; }
+.landing h2.group {
+  font-size: 1.0rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  margin: 30px 0 14px;
+}
 .landing .choices {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 320px));
@@ -179,6 +187,8 @@ a.nav:hover, a.home:hover { border-color: var(--apex-light); }
 .landing .choice .big { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
 .landing .choice.normal .big { color: var(--apex-light); }
 .landing .choice.fast .big { color: var(--fast); }
+.landing .choice.f1tenth .big { color: #f08a8a; } /* red, like the slide */
+.landing .choice.tmrl .big { color: #f5a35a; }    /* orange, like the slide */
 .landing .choice .small { color: var(--muted); font-size: .92rem; }
 
 /* Mobile: stack into one column so the QR-scanned phone view works */

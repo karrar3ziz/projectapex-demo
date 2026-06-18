@@ -9,20 +9,33 @@
 <body>
   <main class="wrap landing">
     <h1>Project <span class="accent">Apex</span></h1>
-    <p class="lead">Watch the agent learn to race &mdash; early, mid and final training runs, side by side.</p>
+    <p class="lead">Every attempt in one place &mdash; from the first experiments to the final agent.</p>
 
+    <h2 class="group">Earlier attempts</h2>
     <div class="choices">
-      <a class="choice normal" href="normal.html">
-        <div class="big">Normal Speed</div>
-        <div class="small">Training shown at real-time game speed.</div>
+      <a class="choice f1tenth" href="f1tenth.html">
+        <div class="big">Attempt 1 &middot; F1Tenth</div>
+        <div class="small">PPO on a simulated track. One clip.</div>
       </a>
-      <a class="choice fast" href="fast.html">
-        <div class="big">Fast Speed</div>
-        <div class="small">The same training, fast-forwarded to train quicker.</div>
+      <a class="choice tmrl" href="tmrl.html">
+        <div class="big">Attempt 2 &middot; TMRL + SAC</div>
+        <div class="small">Best agent on Trackmania 2020. Two episodes.</div>
       </a>
     </div>
 
-    <p class="hint">Each page plays three clips together: <strong>Early</strong>, <strong>Mid</strong> and <strong>Final</strong> stage.</p>
+    <h2 class="group">Project Apex (final)</h2>
+    <div class="choices">
+      <a class="choice normal" href="normal.html">
+        <div class="big">Normal Speed</div>
+        <div class="small">Training at real-time game speed. Three stages.</div>
+      </a>
+      <a class="choice fast" href="fast.html">
+        <div class="big">Fast Speed</div>
+        <div class="small">The same training, fast-forwarded. Three stages.</div>
+      </a>
+    </div>
+
+    <p class="hint">Clips play automatically, muted and on a loop.</p>
   </main>
 </body>
 </html>
