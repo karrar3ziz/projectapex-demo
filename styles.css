@@ -102,6 +102,13 @@ header.bar .sub {
   display: block;
 }
 
+/* Larger 16:9 stages for the "approach" pages (one or two big boxes) */
+.grid.one { grid-template-columns: 1fr; max-width: 940px; margin: 0 auto; }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+
+.tile .frame.wide { aspect-ratio: 16 / 9; }
+.tile .frame.wide video { object-fit: contain; } /* show the whole frame, no crop */
+
 /* Controls */
 .controls {
   display: flex;
